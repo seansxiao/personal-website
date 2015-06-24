@@ -1,7 +1,6 @@
 @import url('http://fonts.googleapis.com/css?family=Poiret+One');
 
 .page {
-    max-width: 1196px;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -10,6 +9,8 @@
 }
 
 html {
+    min-width: 400px;
+
     background-image: url('../images/bg3.jpg');
     background-repeat: no-repeat;
     background-position: top center;
@@ -20,41 +21,120 @@ html {
     box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);
 }
 
-.topBanner {
-	padding: 5px 10px;
-	margin: 10px 20px 5px 20px;
-	border-radius: 80px 5px 80px 5px;
-    box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);
+/* BEGIN -- STANDARD TAGS -- BEGIN */
 
-    background: url('../images/bg3.jpg');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-attachment: fixed;
-    background-size: cover;
-
-	text-align: center;
-	font-family: 'Poiret One';
-	color: #fff;
-
-    transition: border-radius 0.5s ease-out, padding 0.5s ease-out, margin 0.5s ease-out;
+a, p, h1, h2 {
+    text-align: center;
+    font-family: 'Poiret One';
+    color: #fff;
 }
 
-.topBanner:hover {
-	padding: 10px 10px;
-	margin: 40px 50px 5px 50px;
-    border-radius: 5px 80px 5px 80px;
-
-    transition: border-radius 0.5s ease-out, padding 0.5s ease-out, margin 0.5s ease-out;
+p {
+    font-size: 2em;
 }
 
-.topBanner:active {
-	padding: 10px 10px;
-	margin: 40px 200px 5px 200px;
-    border-radius: 5px 200px 5px 200px;
-
-    transition: border-radius 0.5s ease-out, padding 0.5s ease-out, margin 0.5s ease-out;
-}
 
 h1 {
-	font-size: 3em;
+    font-size: 3em;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* END -- STANDARD TAGS -- END */
+
+/* BEGIN -- PANE TAGS -- BEGIN */
+
+.pane {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 80px 5px;
+    box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);
+    vertical-align: top;
+    display: inline-block;
+    z-index: 1;
+
+    /* for images */
+    background-size: cover;
+    background-position: center center;
+
+    cursor: pointer;
+
+    transition: border-radius 0.5s ease-out, width 0.5s ease-out;
+}
+
+.pane:hover {
+    border-radius: 120px;
+}
+
+.pane:active {
+    box-shadow: 0 0 20px 10px rgba(0,0,0,0.5) inset;
+}
+
+.container {
+    padding: 5px;
+    margin: 5px;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    z-index: 0;
+}
+
+.image {
+    visibility: hidden;
+    opacity: 0.0;
+
+    transition: visibility 0.5s ease-out, opacity 0.5s ease-out, border-radius 0.5s ease-out, width 0.5s ease-out;
+}
+
+.overlay {
+    z-index: 10;
+    width: auto;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 50px;
+    padding: 10px;
+
+    visibility: hidden;
+    opacity: 0.0;
+
+    transition: visibility 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+*:hover ~ .overlay {
+    visibility: visible;
+    opacity: 1.0;
+}
+
+/* END -- PANE TAGS -- END */
+
+#welcomeContainer {
+    float: left;
+    margin: 10px 20px 0 20px;
+    width: 800px;
+}
+
+#welcomeContainer:hover .image {
+    visibility: visible;
+    opacity: 0.95;
+}
+
+#welcome {
+	margin: 5px 5px 20px 5px;
+    width: 400px;
+    display: block;
+}
+
+#welcomeContainer:hover #welcome {
+    width: 83%;
+    border-radius: 5px 80px;
+}
+
+#welcomeContainer:hover #welcome:hover {
+    width: 100%;
 }
