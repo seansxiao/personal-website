@@ -34,21 +34,55 @@ body {
     background-color: #fff;
 }
 
+.panel {
+    background-color: rgba(0,0,0,0.7);
+    border-width: 0;
+    border-radius: 20px;
+    padding: 30px;
+
+    transition: background-color 0.5s ease-out;
+}
+
+.panel:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+img {
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);
+
+    transition: border-radius 0.5s ease-out, box-shadow 0.5s ease-out;
+}
+
+img:hover {
+    border-radius: 40px;
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.5);
+}
+
+img:active {
+    box-shadow: none;
+}
+
+.panel p {
+    color: #fff;
+}
+
 #header {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);
 }
 
 #header h1 {
     color: #fff;
+    vertical-align: middle;
 }
 
 #header a.button {
-    margin: 0px;
+    margin: 0;
     box-shadow: 0 0 0 0 #000;
     width: 150px;
     height: 100px;
@@ -63,9 +97,9 @@ a.button p {
 
 #footer {
     position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);
 }
